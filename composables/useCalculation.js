@@ -1,8 +1,7 @@
 export default function () {
-  const list =  useState('list', () => 'bar')
-  const list2 =  useState('list2', () => []);
-  function addTo(params) {
-    list2.value = [...list2.value, params];
+    const result =  useState('result', () => 0);
+    function calculate( param1, param2 )  {
+      result.value = param1 + param2;
+    }
+    return { result, calculate}
   }
-  return {list, list2, addTo}
-}

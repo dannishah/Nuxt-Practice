@@ -1,6 +1,7 @@
 <template>
   <div class="text-3xl overflow-auto m-2 max-w-screen font-bold underline">
-      
+      <Header></Header>
+      <ClientOnly fallback-tag="span" fallback="Loading comments..." />
     <!-- <UTable :rows="entries" /> -->
     <!-- {{ entries }} -->
     <!-- <div

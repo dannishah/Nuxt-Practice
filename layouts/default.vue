@@ -9,7 +9,7 @@ const links = [
     label: "Inbox",
     icon: "i-heroicons-inbox",
     badge: "4",
-    to: "inbox",
+    to: "/inbox",
   },
   {
     label: "Todo List",
@@ -17,20 +17,28 @@ const links = [
     to: "/todo"
   },
   {
-    label: "Settings",
-    icon: "i-heroicons-cog-8-tooth",
-    children: [
-      {
-        label: "General",
-      },
-      {
-        label: "Members",
-      },
-      {
-        label: "Notifications",
-      },
-    ],
+    label: "Id and search params",
+    icon: "i-heroicons-user-group",
+    to: "/users/:id"
   },
+  // {
+  //   label: "Settings",
+  //   icon: "i-heroicons-cog-8-tooth",
+  //   children: [
+  //     {
+  //       label: "General",
+  //       to: "/setting"
+  //     },
+  //     {
+  //       label: "Members",
+  //       to: "/setting"
+  //     },
+  //     {
+  //       label: "Notifications",
+  //       to: "/setting"
+  //     },
+  //   ],
+  // },
 ];
 </script>
 
@@ -41,6 +49,10 @@ const links = [
         <template #left>
           <NuxtImg src="/public/favicon" />
         </template>
+        <template #right>
+         <nuxt-link to="/login">login</nuxt-link>
+         <nuxt-link to="/register">register</nuxt-link>
+        </template>
       </UDashboardNavbar>
       <UDashboardSidebar>
         <UDashboardSidebarLinks :links="links" />
@@ -49,6 +61,5 @@ const links = [
       </UDashboardSidebar>
     </UDashboardPanel>
     <slot />
-  <NuxtPage></NuxtPage>
   </UDashboardLayout>
 </template>

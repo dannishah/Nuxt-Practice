@@ -3,19 +3,29 @@ import type { NavItem } from '@nuxt/content/dist/runtime/types'
 
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
 
-const links = [{
-  label: 'Home',
-  icon: 'i-heroicons-book-open',
-  to: '/home'
-}, {
-  label: 'Pro',
-  icon: 'i-heroicons-square-3-stack-3d',
-  to: '/pro'
-}, {
-  label: 'Releases',
-  icon: 'i-heroicons-rocket-launch',
-  to: '/releases'
-}]
+const links = [
+{
+    label: "Home",
+    icon: "i-heroicons-home",
+    to: "/",
+  },
+  {
+    label: "Inbox",
+    icon: "i-heroicons-inbox",
+    badge: "4",
+    to: "/inbox",
+  },
+  {
+    label: "Todo List",
+    icon: "i-heroicons-user-group",
+    to: "/todo"
+  },
+  {
+    label: "Id and search params",
+    icon: "i-heroicons-user-group",
+    to: "/users-id/:id"
+  },
+]
 </script>
 
 <template>
